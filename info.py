@@ -22,8 +22,8 @@ USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
 PICS = (environ.get('PICS', 'https://telegra.ph/file/153d6b252269bf10b58b9.jpg https://telegra.ph/file/8f47e51d61193fc2457d2.jpg https://telegra.ph/file/65edb774e93dc5e92ed0c.jpg')).split()
 
 # Admins, Channels & Users
-ADMINS = [int(2001653136)
-CHANNELS = [int(-1001646992718)
+ADMINS = int(2001653136)
+CHANNELS = int(-1001646992718)
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_channel = '-1001607475353'
