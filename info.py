@@ -12,9 +12,9 @@ def is_enabled(value, default):
 
 # Bot information
 SESSION = environ.get('SESSION', 'Media_search')
-API_ID = int(environ.get('20675514', ''))
-API_HASH = environ.get('5a82ce3aa5e5345af178278f6536744d', '')
-BOT_TOKEN = environ.get('5514369553:AAGF693VbOxnv56L1hh96O25WMt3ZPszVUk', "")
+API_ID = int(20675514)
+API_HASH = '5a82ce3aa5e5345af178278f6536744d'
+BOT_TOKEN = '5514369553:AAGF693VbOxnv56L1hh96O25WMt3ZPszVUk'
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
@@ -22,22 +22,22 @@ USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
 PICS = (environ.get('PICS', 'https://telegra.ph/file/153d6b252269bf10b58b9.jpg https://telegra.ph/file/8f47e51d61193fc2457d2.jpg https://telegra.ph/file/65edb774e93dc5e92ed0c.jpg')).split()
 
 # Admins, Channels & Users
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '2001653136').split()]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001646992718').split()]
+ADMINS = [int(2001653136)
+CHANNELS = [int(-1001646992718)
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
-auth_channel = environ.get('AUTH_CHANNEL', '-1001607475353')
+auth_channel = '-1001607475353'
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://nithya:nithya@cluster0.exupnem.mongodb.net/?retryWrites=true&w=majority")
-DATABASE_NAME = environ.get('DATABASE_NAME', "MongoDB")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
+DATABASE_URI = "mongodb+srv://nithya:nithya@cluster0.exupnem.mongodb.net/?retryWrites=true&w=majority"
+DATABASE_NAME = "MongoDB"
+COLLECTION_NAME = 'Telegram_files'
 
 # Others
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001799057674'))
+LOG_CHANNEL = int(-1001799057674')
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'search_zone_support')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
 IMDB = is_enabled((environ.get('IMDB', "True")), True)
